@@ -1,0 +1,17 @@
+{
+  "name": "api-mvc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --ignore .js /src/controller/tdc/index.js excluedes .css EXAMPLE",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "author": "montoyitag",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.21"
+  }
+}
