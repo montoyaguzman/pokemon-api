@@ -7,7 +7,47 @@
 	},
 	"item": [
 		{
-			"name": "createPokemon",
+			"name": "getAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/pokemon/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pokemon",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/pokemon/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pokemon",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -36,9 +76,9 @@
 			"response": []
 		},
 		{
-			"name": "editCompletePokemon",
+			"name": "editComplete",
 			"request": {
-				"method": "POST",
+				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
@@ -50,27 +90,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/edit-pokemon/4",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"edit-pokemon",
-						"4"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "getAll",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/pokemon/",
+					"raw": "http://localhost:3000/pokemon/4",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -78,7 +98,7 @@
 					"port": "3000",
 					"path": [
 						"pokemon",
-						""
+						"4"
 					]
 				}
 			},

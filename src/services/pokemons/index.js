@@ -15,42 +15,40 @@ class PokemonServices {
     }
 
     createPokemon(newPokemon){
-        this.pokemones.push(newPokemon);
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                this.pokemones.push(newPokemon);
+                resolve(); 
+            }, 1000);
+        });
     }
 
     queryAll(){
-
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(this.pokemones); // try
                 // reject catch
             }, 1000);
-        })
-        
+        });
     }
 
-    queryById(){
-        const id = req.params.id;
-        console.log('req.params: ', id);
-        console.log('req.params: ', typeof id);
-        // aqui iria la consulta la bd con el id
-        const foundedPokemon = pokemons.filter(pokemon => pokemon.id === parseInt(id) )[0];
-        console.log('foundedPokemon: ', foundedPokemon);
-        res.status(200).json(foundedPokemon);
+    getById(id){
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const foundedPokemon = this.pokemones.filter(pokemon => pokemon.id === parseInt(id) )[0];
+                resolve(foundedPokemon);
+            }, 1000);
+        });
     }
 
-    editPartial(){
-        const id = req.params.id;
-        const newPokemon = req.body;
-        console.log('newPokemon: ', newPokemon);
-        const index = pokemons.findIndex(pokemon => pokemon.id === parseInt(id));
-        pokemons[index] = newPokemon;
-        console.log('pokemons', pokemons);
-        res.status(200).send();
-    }
-
-    editComplete(){
-
+    editComplete(id, pokemon){
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const index = this.pokemones.findIndex(pokemon => pokemon.id === parseInt(id));
+                this.pokemones[index] = pokemon;
+                resolve();
+            }, 1000);
+        });
     }
 
     deletePokemon(){
